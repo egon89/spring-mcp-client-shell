@@ -1,0 +1,19 @@
+spring:
+  application:
+    name: mcp-client
+  main:
+    web-application-type: none
+
+  shell:
+    interactive:
+      enabled: true
+
+  ai:
+    ollama:
+      chat:
+        model: llama3
+        base-url: http://ollama:11434
+      embedding:
+        model: nomic-embed-text
+        base-url: http://ollama:11434
+      
