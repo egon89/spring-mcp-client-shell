@@ -11,7 +11,7 @@ spring:
   ai:
     ollama:
       chat:
-        model: llama3
+        model: llama3.2
         base-url: http://ollama:11434
       embedding:
         model: nomic-embed-text

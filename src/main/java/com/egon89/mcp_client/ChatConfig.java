@@ -21,13 +21,16 @@ public class ChatConfig {
 
     @Bean
     public ChatClient chatClient(ChatModel chatModel, ChatMemory chatMemory, ToolCallbackProvider tools) {
-        System.out.println("ChatClient initialized with the following tools:");
         Arrays.stream(tools.getToolCallbacks())
             .forEach(tool -> System.out.printf("> Tool: %s\n", tool.getToolDefinition().name()));
+
+        final var systemPrompt = "Always use available Model Context Protocol (MCP) tools to answer user queries before "
+            + "attempting to answer directly. Only answer directly if no tool is suitable.";
 
         return ChatClient.builder(chatModel)
             .defaultToolCallbacks(tools)
             .defaultAdvisors(MessageChatMemoryAdvisor.builder(chatMemory).conversationId("shell").build())
+            .defaultSystem(systemPrompt)
             .build();
     }
 }

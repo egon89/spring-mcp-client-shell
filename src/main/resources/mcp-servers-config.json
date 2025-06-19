@@ -5,7 +5,7 @@
       "args": [
           "-jar",
           "/home/everton/projects/java/read-file-mcp/build/libs/read-file-mcp-1.0.0.jar",
-          "--folder.path=/tmp/resource-data"
+          "--folder.path=/home/everton/Documents/mcp-context"
       ]
     }
   }
