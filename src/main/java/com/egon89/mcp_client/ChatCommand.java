@@ -1,7 +1,6 @@
 package com.egon89.mcp_client;
 
 import org.springframework.ai.chat.client.ChatClient;
-import org.springframework.ai.tool.ToolCallbackProvider;
 import org.springframework.shell.standard.ShellComponent;
 import org.springframework.shell.standard.ShellMethod;
 import org.springframework.shell.standard.ShellOption;
@@ -11,7 +10,7 @@ public class ChatCommand {
 
     private final ChatClient chatClient;
 
-    public ChatCommand(ChatClient chatClient, ToolCallbackProvider tools) {
+    public ChatCommand(ChatClient chatClient) {
         this.chatClient = chatClient;
     }
     
